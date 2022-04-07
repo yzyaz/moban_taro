@@ -1487,9 +1487,9 @@
     "@tarojs/runtime" "3.4.4"
     "@tarojs/taro-h5" "3.4.4"
 
-"@tarojs/webpack-runner@3.4.4":
+"@tarojs/webpack-runner@^3.4.4":
   version "3.4.4"
-  resolved "https://registry.npmmirror.com/@tarojs/webpack-runner/-/webpack-runner-3.4.4.tgz#ded363ab8e54eca0806a7ad3f162abf9228b752a"
+  resolved "https://registry.yarnpkg.com/@tarojs/webpack-runner/-/webpack-runner-3.4.4.tgz#ded363ab8e54eca0806a7ad3f162abf9228b752a"
   integrity sha512-yDHdf32+v4Ci2BmCWtAudJyFKyMjK5KlHbn66h4ShNo7mY4pmtwECGl15itqxmiAcAlxbKefOKYFrQEI4x6eCg==
   dependencies:
     "@tarojs/helper" "3.4.4"
@@ -5171,6 +5171,11 @@ https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha512-J+FkSdyD+0mA0N+81tMotaRMfSL9SGi+xpD3T6YApKsc3bGSXJlfXri3VyFOeYkfLRQisDk1W+jIFFKBeUBbBg==
+
+husky@^7.0.4:
+  version "7.0.4"
+  resolved "https://registry.npmmirror.com/husky/-/husky-7.0.4.tgz#242048245dc49c8fb1bf0cc7cfb98dd722531535"
+  integrity sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   version "0.4.24"
