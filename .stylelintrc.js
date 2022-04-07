@@ -13,7 +13,6 @@ module.exports = {
         ignorePseudoClasses: ['global'],
       },
     ],
-    'function-calc-no-invalid': null,
     'at-rule-no-unknown': null,
     'selector-type-no-unknown': null,
     'no-descending-specificity': null,
