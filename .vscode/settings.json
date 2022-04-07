@@ -3,11 +3,6 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  // "prettier.singleQuote": true,
-  // "prettier.semi": true,
-  // "prettier.endOfLine": "lf",
-  // "prettier.jsxBracketSameLine": false,
-  // "prettier.trailingComma": "es5",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.eol": "\n",
@@ -15,12 +10,10 @@
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.associations": {
-    "*.css": "postcss"
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "svg.preview.background": "custom",
-  "cSpell.words": [
-    "echarts"
-  ]
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
