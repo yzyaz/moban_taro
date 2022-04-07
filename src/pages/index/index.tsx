@@ -1,24 +1,25 @@
-import { Component } from 'react'
-import { View, Text } from '@tarojs/components'
-import './index.less'
+import { Component } from "react";
+import { View, Text, Image } from "@tarojs/components";
+import bottom from "src/assets/img/bottom.svg";
+import "./index.less";
 
 export default class Index extends Component {
+  componentWillMount() {}
 
-  componentWillMount () { }
+  componentDidMount() {}
 
-  componentDidMount () { }
+  componentWillUnmount() {}
 
-  componentWillUnmount () { }
+  componentDidShow() {}
 
-  componentDidShow () { }
+  componentDidHide() {}
 
-  componentDidHide () { }
-
-  render () {
+  render() {
     return (
       <View className='index'>
         <Text>Hello world!</Text>
+        <Image src={bottom} />
       </View>
-    )
+    );
   }
 }
