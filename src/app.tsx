@@ -1,6 +1,6 @@
-import { Component } from "react";
-import { Provider } from "react-redux";
-import store from "./store";
+import { Component } from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
 
 class App extends Component {
   componentDidMount() {}
