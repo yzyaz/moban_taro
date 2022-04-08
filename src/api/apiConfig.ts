@@ -2,6 +2,8 @@ import Taro from '@tarojs/taro';
 import createError from 'src/utils/createError';
 import { BASE_HOST, BASE_URL } from './apiBase';
 
+type TConfig<T> = Partial<Taro.request.Option<T>>;
+
 /**
  * 检查http状态值
  * @param response
@@ -59,7 +61,6 @@ const request = <T = any, U = any>(options: Taro.request.Option<T>) => {
     })
       // .then(setCookie)
       .then((res) => {
-        console.log('res', res);
         checkHttpStatus(res, resolve, reject);
       });
   });
@@ -67,11 +68,11 @@ const request = <T = any, U = any>(options: Taro.request.Option<T>) => {
 
 export default {
   request,
-  get<T = any, U = any>(url: string, config?: Taro.request.Option<T>) {
+  get<T = any, U = any>(url: string, config?: TConfig<T>) {
     const options: Taro.request.Option<T> = { ...config, url, method: 'GET' };
     return request<T, U>(options);
   },
-  delete<T = any, U = any>(url: string, config?: Taro.request.Option<T>) {
+  delete<T = any, U = any>(url: string, config?: TConfig<T>) {
     const options: Taro.request.Option<T> = {
       ...config,
       url,
@@ -79,7 +80,7 @@ export default {
     };
     return request<T, U>(options);
   },
-  head<T = any, U = any>(url: string, config?: Taro.request.Option<T>) {
+  head<T = any, U = any>(url: string, config?: TConfig<T>) {
     const options: Taro.request.Option<T> = {
       ...config,
       url,
@@ -87,7 +88,7 @@ export default {
     };
     return request<T, U>(options);
   },
-  options<T = any, U = any>(url: string, config?: Taro.request.Option<T>) {
+  options<T = any, U = any>(url: string, config?: TConfig<T>) {
     const options: Taro.request.Option<T> = {
       ...config,
       url,
@@ -95,11 +96,7 @@ export default {
     };
     return request<T, U>(options);
   },
-  post<T = any, U = any>(
-    url: string,
-    data?: U,
-    config?: Taro.request.Option<T>
-  ) {
+  post<T = any, U = any>(url: string, data?: U, config?: TConfig<T>) {
     const options: Taro.request.Option<T> = {
       ...config,
       url,
@@ -108,11 +105,7 @@ export default {
     };
     return request<T, U>(options);
   },
-  put<T = any, U = any>(
-    url: string,
-    data?: U,
-    config?: Taro.request.Option<T>
-  ) {
+  put<T = any, U = any>(url: string, data?: U, config?: TConfig<T>) {
     const options: Taro.request.Option<T> = {
       ...config,
       url,
