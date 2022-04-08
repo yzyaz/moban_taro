@@ -1,5 +1,5 @@
 import { createModel } from '@rematch/core';
-// import { apiGetWn } from 'src/api/count';
+import { testFetch, testFetchErr } from 'src/api/testFetch';
 import { RootModel } from '.';
 
 export const count = createModel<RootModel>()({
@@ -7,9 +7,8 @@ export const count = createModel<RootModel>()({
     num: 0,
     str: 's',
     req: {} as any,
-  }, // initial state
+  },
   reducers: {
-    // handle state changes with pure functions
     increment(state, payload: number) {
       state.num = state.num + payload;
     },
@@ -18,29 +17,18 @@ export const count = createModel<RootModel>()({
     },
   },
   effects: (dispatch) => ({
-    // handle state changes with impure functions.
-    // use async/await for async actions
-    async incrementAsync(payload: number, state) {
-      console.log('This is current root state', payload, state);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      dispatch.count.increment(payload);
-    },
-    async incrementAsync2(payload: number, state) {
-      console.log('This is current root state', payload, state);
-      await new Promise((resolve, reject) =>
-        setTimeout(
-          //@ts-ignore
-          reject('123'),
-          1000
-        )
-      );
-      dispatch.count.increment(payload * 2);
+    // 数据请求
+    async testFetch() {
+      let req = await testFetch();
+      console.log('req', req.data);
+      dispatch.count.changeReq(req);
     },
 
-    // 数据请求
-    // async fetchWn() {
-    //   let req = await apiGetWn();
-    //   dispatch.count.changeReq(req);
-    // },
+    // 数据请求错误示范
+    async testFetchErr() {
+      let req = await testFetchErr();
+      console.log('req', req.data);
+      dispatch.count.changeReq(req);
+    },
   }),
 });
